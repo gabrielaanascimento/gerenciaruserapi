@@ -5,19 +5,7 @@ import { selectAll, selectUser, insertUser, updateUser, deleteUser,loginUser } f
 env.config()
 
 const app = express()
-//app.use(cors())
-const allowedOrigins = ['https://gerenciarusuarios.vercel.app/']; // Substitua pela URL do seu front-end
-const corsOptions = {
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    }
-};
-app.use(cors(corsOptions));
-
+app.use(cors())
 app.use(express.json())
 
 app.get("/teste", (req,res) =>{
