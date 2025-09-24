@@ -20,6 +20,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json())
 
+app.get("/teste", (req,res) =>{
+    res.send("ok")
+})
+
 app.get('/', async (req,res) => {
     try {
         const response = await selectAll()
